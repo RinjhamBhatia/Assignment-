@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard</title><style>
+    /* Reset styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #eef2f8;
+    }
+
+    /* Main layout using CSS Grid */
+    .layout {
+        display: grid;
+        grid-template-columns: 170px 1fr;
+
+        grid-template-areas:
+            "head head"
+            "side main"
+            "foot foot";
+
+        gap: 10px;
+        min-height: 100vh;
+        padding: 10px;
+    }
+
+    /* Header */
+    header {
+        grid-area: head;
+        background: #12203a;
+        color: white;
+        padding: 14px;
+        border-radius: 8px;
+    }
+
+    /* Sidebar */
+    aside {
+        grid-area: side;
+        background: #dbe5fb;
+        padding: 14px;
+        border-radius: 8px;
+    }
+
+    aside ul {
+        padding-left: 18px;
+    }
+
+    aside li {
+        margin: 8px 0;
+    }
+
+    /* Main content */
+    main {
+        grid-area: main;
+        min-width: 0;
+    }
+
+    /* Responsive dashboard boxes using Grid */
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+    }
+
+    /* Flexbox inside each box */
+    .item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: white;
+        padding: 16px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px #00000010;
+    }
+
+    .icon {
+        font-size: 28px;
+    }
+
+    .item p {
+        margin-top: 5px;
+        color: #555;
+    }
+
+    /* Footer */
+    footer {
+        grid-area: foot;
+        background: #12203a;
+        color: white;
+        padding: 12px;
+        text-align: center;
+        border-radius: 8px;
+    }
+
+    /* Mobile layout */
+    @media (max-width: 600px) {
+        .layout {
+            grid-template-columns: 1fr;
+
+            grid-template-areas:
+                "head"
+                "side"
+                "main"
+                "foot";
+        }
+
+        aside ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            list-style-position: inside;
+        }
+    }
+</style>
+
+</head><body><div class="layout">
+
+    <!-- Dashboard header -->
+    <header>
+        <h2>My Dashboard</h2>
+        <p>Welcome to your dashboard!</p>
+    </header>
+
+    <!-- Sidebar menu -->
+    <aside>
+        <h3>Menu</h3>
+
+        <ul>
+            <li>Home</li>
+            <li>Reports</li>
+            <li>Settings</li>
+            <li>Profile</li>
+        </ul>
+    </aside>
+
+    <!-- Main dashboard content -->
+    <main>
+        <h2 style="margin-bottom: 15px;">Overview</h2>
+
+        <div class="gallery">
+
+            <div class="item">
+                <span class="icon">&#128100;</span>
+                <div>
+                    <h3>120</h3>
+                    <p>Users</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <span class="icon">&#128176;</span>
+                <div>
+                    <h3>Rs 45k</h3>
+                    <p>Sales</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <span class="icon">&#128230;</span>
+                <div>
+                    <h3>36</h3>
+                    <p>Orders</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <span class="icon">&#11088;</span>
+                <div>
+                    <h3>4.8</h3>
+                    <p>Rating</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <span class="icon">&#128172;</span>
+                <div>
+                    <h3>18</h3>
+                    <p>Messages</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <span class="icon">&#9989;</span>
+                <div>
+                    <h3>92%</h3>
+                    <p>Tasks Completed</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Created by Rinjham | CSS Grid Dashboard</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
